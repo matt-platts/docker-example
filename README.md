@@ -5,11 +5,14 @@
 - Passing environment variables into apache which can be picked up in scripts later
 - Running apache in a non-default location
 - Passing code into docker which contains further gitmodules, themselves containing further git modules
+- Bash script to run everything needed to get it running
 
 ## Instructions
 
 1. Clone this git repo (via ssh or https).
-2. cd into the repo and download the git modules and subsequent modules.
+2. Either cd into the repo and run the bash script simply called 'go' (by running './go' ) to have it do everything for you, then jump to step 5 or..
+
+   cd into the repo and download the git modules and subsequent modules.
 
   - cd docker-example
   - git submodule init
@@ -25,15 +28,18 @@
 
 ## Notes on the git modules:
 
-The games submodule was addded with the following code:
+There is an excellent tutorial on git submodules here: https://git-scm.com/book/en/v2/Git-Tools-Submodules
 
+The games submodule was originally addded with the following code:
 - git submodule init
 - git submodule add https://github.com/matt-platts/games.git my_files/applications/my-apps/matt/games
 
-From within this submodule, the games were added with similar code, documented on the git page at https://github.com/matt-platts/games.
+abd from within this submodule, the games were added with similar code.
 
-Run the command 'git submodule update' which will download the initial repo.
-Then go into this repo at my_files/applications/my-apps/matt/games and run the following (git responses are included in the below):
+### In order to download the submodules:
+Run the commands 'git submodule init' and 'git submodule update' in the root of this project, which will download the initial 'games' repo and pointers to further repos.
+
+Then cd into the new 'games' repo at my_files/applications/my-apps/matt/games and run the following (git responses are included in the below):
 
 - git submodule init
   - Submodule 'battleships' (https://github.com/matt-platts/battleships.git) registered for path 'battleships'
