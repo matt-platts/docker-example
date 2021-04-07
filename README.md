@@ -9,8 +9,16 @@
 ## Instructions
 
 1. Clone this git repo (via ssh or https).
-2. Download the git modules and subsequent modules.
-3. cd to envionment/scripts and run the build script (a bash script so won't work on Windows), or simply run 'docker build -t matt ../../' from within this folder.
+2. cd into the repo and download the git modules and subsequent modules.
+
+  - cd docker-example
+  - git submodule init
+  - git submodule update
+  - cd my_files/applications/my-apps/matt/games
+  - git submodule init
+  - git submodule update
+
+3. cd to envionment/scripts from the git root and run the build script ('./build' - note this is a bash script so won't work on Windows - or might with git bash installed?), or simply run 'docker build -t matt ../../' from within this folder.
 4. Staying in this folder, run the script 'local_server' (or for windows, open it and run each line individually)
 5. Navigate to localhost in your browser and be amazed!
 
