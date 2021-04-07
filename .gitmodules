@@ -1,6 +1,6 @@
-[submodule "applications/my-apps/matt/pacman"]
-	path = applications/my-apps/matt/pacman
+[submodule "my_files/applications/my-apps/matt/pacman"]
+	path = my_files/applications/my-apps/matt/pacman
 	url = https://github.com/matt-platts/pacman-2016.git
-[submodule "applications/my-apps/matt/battleships"]
-	path = applications/my-apps/matt/battleships
+[submodule "my_files/applications/my-apps/matt/battleships"]
+	path = my_files/applications/my-apps/matt/battleships
 	url = https://github.com/matt-platts/battleships.git
