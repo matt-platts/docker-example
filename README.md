@@ -6,10 +6,21 @@
 - Running apache in a non-default location
 - Passing code into docker which contains further gitmodules, themselves containing further git modules
 
+## Instructions
+
+1. Clone this git repo (via ssh or https).
+2. Download the git modules and subsequent modules.
+3. cd to envionment/scripts and run the build script, or simply run docker build -t matt ../../ from within this folder.
+4. Staying in this folder, run local_server
+5. Navigate to localhost.
+
+
+## Notes on the git modules:
+
 The games submodule was addded with the following code:
 
-git submodule init
-git submodule add https://github.com/matt-platts/games.git my_files/applications/my-apps/matt/games
+- git submodule init
+- git submodule add https://github.com/matt-platts/games.git my_files/applications/my-apps/matt/games
 
 From within this submodule, the games were added with similar code, documented on the git page at https://github.com/matt-platts/games.
 
