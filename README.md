@@ -28,7 +28,7 @@
 5. Navigate to localhost in your browser and be amazed!
 
 
-## Notes on the git modules:
+## Notes on the git submodules:
 
 There is an excellent tutorial on git submodules here: https://git-scm.com/book/en/v2/Git-Tools-Submodules
 
