@@ -22,7 +22,9 @@
   - git submodule update
 
 3. cd to envionment/scripts from the git root and run the build script ('./build' - note this is a bash script so won't work on Windows - or might with git bash installed?), or simply run 'docker build -t matt ../../' from within this folder.
+
 4. Staying in this folder, run the script 'local_server' (or for windows, open it and run each line individually)
+
 5. Navigate to localhost in your browser and be amazed!
 
 
@@ -30,7 +32,7 @@
 
 There is an excellent tutorial on git submodules here: https://git-scm.com/book/en/v2/Git-Tools-Submodules
 
-The games submodule was originally addded with the following code:
+The games submodule was originally addded with the following code (run in the root of the project):
 - git submodule init
 - git submodule add https://github.com/matt-platts/games.git my_files/applications/my-apps/matt/games
 
