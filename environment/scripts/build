@@ -1,2 +1,3 @@
 #!/bin/bash
+docker build -t matt_mysql ../DB
 docker build -t matt ../../

@@ -4,7 +4,7 @@ FROM    centos:7
 RUN yum -y --setopt tsflags=nodocs update && \
 yum -y --setopt tsflags=nodocs install gcc httpd openssl openssl-devel \ 
 perl perl-App-cpanminus mod_ssl glibc.i686 perl-CGI libxml2-devel php \
-screen curl vim "perl(DBD::mysql)" && \
+mysql screen curl vim "perl(DBD::mysql)" && \
 yum clean all 
 
 # We just installed perl-App-cpanminus in the line above, lets use it to install something, then delete the .cpanm folder that it will make as it's not required
