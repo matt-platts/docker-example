@@ -1,0 +1,6 @@
+#!/bin/bash
+dir=$(pwd)
+parentdir="$(dirname "$dir")"
+
+docker network create matt-net
+docker run -d --name matt --network matt-net --env-file $parentdir/environment_variables/MATT.env -p 80:8080 -p 443:443 -p 444:444 matt /run-httpd.sh

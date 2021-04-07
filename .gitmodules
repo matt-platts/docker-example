@@ -1,0 +1,6 @@
+[submodule "applications/my-apps/pacman"]
+	path = applications/my-apps/pacman
+	url = https://github.com/matt-platts/pacman-2016.git 
+[submodule "applications/my-apps/battleships"]
+	path = applications/my-apps/battleships 
+	url = https://github.com/matt-platts/battleships.git 

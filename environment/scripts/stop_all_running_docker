@@ -1,0 +1,19 @@
+#!/bin/bash
+CONTAINERS=$(docker container ls -aq)
+if [ -z "$CONTAINERS" ] 
+then
+	echo "No Running containers to stop"
+ 
+else
+	docker container stop $CONTAINERS
+	docker container rm $CONTAINERS
+fi
+
+NETWORKS=$(docker network ls -fNAME=matt-net -q)
+if [ -z "$NETWORKS" ] 
+then
+	echo "No Running networks to stop"
+ 
+else
+	docker network rm $NETWORKS
+fi

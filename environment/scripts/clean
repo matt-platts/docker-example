@@ -1,0 +1,4 @@
+#!/bin/bash
+docker stop matt 
+docker rm matt 
+docker network rm matt-net

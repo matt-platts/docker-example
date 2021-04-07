@@ -1,0 +1,8 @@
+#!/bin/bash
+dir=$(pwd)
+parentdir="$(dirname "$dir")"
+
+#https://medium.com/teckdevops/docker-d-bus-connection-operation-not-permitted-error-804ac983c01e
+
+docker network create dockernetwork
+docker run -d -t --name preprod --cap-add=NET_ADMIN -h preprod --privileged=true --network dockernetwork centos 

@@ -1,0 +1,10 @@
+#!/bin/bash
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+parentdir="$(dirname "$dir")"
+
+docker network create matt-net
+
+# Run docker containers but just keep the test_runner open so we can run tests manually
+docker run -d --name matt_mysql --network matt-net --env-file $parentdir/environment_variables/mysql.env -p 3306:3306 matt_mysql
+docker run -d --name matt --network matt-net --env-file $parentdir/environment_variables/MATT.env -p 80:8080 -p 443:443 -p 444:444 -v $parentdir/MATTCerts:/apps/apache/NPPL/cgi-bin/matt_pki matt /run-httpd.sh
+docker run --name matt_test_runner --network matt-net --env-file $parentdir/environment_variables/test_runner.env -v $parentdir/nose_test_output:/MATTTests/nose_test_output matt_test_runner tail -f /dev/null
