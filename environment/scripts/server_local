@@ -1,6 +1,0 @@
-#!/bin/bash
-dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-parentdir="$(dirname "$dir")"
-
-docker network create matt-net
-docker run -d --name matt --network matt-net --env-file $parentdir/environment_variables/MATT.env -p 80:80 -p 443:443 -p 444:444 matt /run-httpd.sh
