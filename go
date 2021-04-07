@@ -5,6 +5,7 @@ cd my_files/applications/my-apps/matt/games
 printf "Updating git submodules in " 
 pwd
 printf "...\n";
+git pull origin main
 git submodule init
 git submodule update
 cd ../../../../../environment/scripts
