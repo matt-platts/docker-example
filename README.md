@@ -10,9 +10,9 @@
 
 1. Clone this git repo (via ssh or https).
 2. Download the git modules and subsequent modules.
-3. cd to envionment/scripts and run the build script, or simply run docker build -t matt ../../ from within this folder.
-4. Staying in this folder, run local_server
-5. Navigate to localhost.
+3. cd to envionment/scripts and run the build script (a bash script so won't work on Windows), or simply run 'docker build -t matt ../../' from within this folder.
+4. Staying in this folder, run the script 'local_server' (or for windows, open it and run each line individually)
+5. Navigate to localhost in your browser and be amazed!
 
 
 ## Notes on the git modules:
