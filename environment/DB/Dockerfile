@@ -1,4 +1,4 @@
-FROM mysql
+FROM mysql:5.6
 
 # Add a database
 ENV MYSQL_DATABASE matt_db 

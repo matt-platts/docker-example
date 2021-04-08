@@ -2,8 +2,8 @@ FROM    centos:7
 
 # To start, run yum update to get the latest version, then use yum itself to install all the software we need
 RUN yum -y --setopt tsflags=nodocs update && \
-yum -y --setopt tsflags=nodocs install gcc httpd openssl openssl-devel \ 
-perl perl-App-cpanminus mod_ssl glibc.i686 perl-CGI libxml2-devel php \
+yum -y --setopt tsflags=nodocs install gcc httpd openssl openssl-devel perl perl-App-cpanminus \ 
+mod_ssl glibc.i686 perl-CGI perl-DBI perl-Carp perl-Data-Dumper libxml2-devel php php-mysqli \
 mysql screen curl vim "perl(DBD::mysql)" && \
 yum clean all 
 
@@ -25,6 +25,7 @@ ADD my_files/httpd.conf /etc/httpd/conf/httpd.conf
 
 # Setting permissions on files (not required for this particular example but were for Perl scripts in another - line left in as a reminder) 
 RUN chmod -R 755 /applications/my-apps 
+RUN chmod -R 755 /applications/my-apps/matt/db.cgi 
 
 # Copy our run-httpd.sh script into the build, and set permissions on it
 ADD my_files/run-httpd.sh /run-httpd.sh
