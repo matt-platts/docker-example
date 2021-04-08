@@ -20,6 +20,7 @@ echo "Stopping any existing docker instances..."
 echo "Done.\n\nBuilding new docker..."
 
 # Here I could run the ./build script instead from this folder, but it's only one line so no point, might as well put the real command in here 
+docker build -t matt_mysql ../DB
 docker build -t matt ../../
 
 echo "Done.\n\nStarting server..."
@@ -28,9 +29,10 @@ echo "Done.\n\nStarting server..."
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 parentdir="$(dirname "$dir")"
 docker network create matt-net
+docker run -d --name matt_mysql --network matt-net --env-file $parentdir/environment_variables/mysql.env -p 3306:3306 matt_mysql # For the database
 docker run -d --name matt --network matt-net --env-file $parentdir/environment_variables/MATT.env -p 80:80 -p 443:443 -p 444:444 matt /run-httpd.sh
 
 # ./local_server - comented out as i've expanded it all in the 4 lines above
 
 printf "\n\nYour server build has completed and it should now be running. Now navigate to localhost in your browser.\n\n"
-
+printf "You could also log into docker using docker exec -it matt /bin/bash, or log into the mysql container with docker exec -it matt_db mysql -uroot -p\n\n"

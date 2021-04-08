@@ -5,7 +5,8 @@
 - Passing environment variables into apache which can be picked up in scripts later
 - Running apache in a non-default location
 - Passing code into docker which contains further gitmodules, themselves containing further git modules
-- Bash script to run everything needed to get it running
+- Setting up mysql as a separate docker container and connecting to it from the first
+- Bash script to do everything needed to get it running
 
 ## Instructions
 
