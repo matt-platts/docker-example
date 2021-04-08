@@ -8,7 +8,7 @@ print "Content-type:text/html\n\n";
 
 print "<h1>This simple test runs the following SQL:</h1>";
 print "<h4>DESC customer</h4>";
-print "<p>It also uses the database connection params stored in environment variables.</p>";
+print "<p>It also uses the database connection params stored in environment variables to connect to a database in a separate docker container.</p>";
 
 my $db_username = $ENV{'MATT_ENV_DB_USER'};
 my $db_password = $ENV{'MATT_ENV_DB_PASSWORD'};
@@ -24,6 +24,7 @@ my $sql_query = "DESC customer";
 my $sth = $dbh->prepare($sql_query);
 $sth->execute or die "SQL Error: $DBI::errstr\n";
 
+print "The results of your DESC query are below:<br />";
 print "<textarea rows='20' cols='100'>";
 while (my $data = $sth->fetchrow_hashref){
         print Dumper $data;
