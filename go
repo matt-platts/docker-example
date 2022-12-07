@@ -1,3 +1,25 @@
+function get_input () {
+
+
+read varname
+yesval="y"
+yesval2="Y"
+if [[ $varname =~ ^(y|Y)$ ]]; then
+  echo "Proceeding with setup..."
+  return 1
+else
+  echo "Terminating Script."
+  exit
+  return 0
+fi
+}
+
+
+echo "This script will stop all running docker instances - are you sure you want to continue? y/n:"
+
+get_input
+
+
 # Update submodules in the root
 printf "Updating git submodules in root directory...\n"
 git submodule init
@@ -34,5 +56,5 @@ docker run -d --name matt --network matt-net --env-file $parentdir/environment_v
 
 # ./local_server - comented out as i've expanded it all in the 4 lines above
 
-printf "\n\nYour server build has completed and it should now be running. Now navigate to localhost in your browser.\n\n"
+printf "\n\nYour container build has completed and it should now be running. Now navigate to localhost in your browser.\n\n"
 printf "You could also log into docker using docker exec -it matt /bin/bash, or log into the mysql container with docker exec -it matt_mysql mysql -uroot -p (password is 'admin')\n\n"
