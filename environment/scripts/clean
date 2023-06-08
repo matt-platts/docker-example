@@ -1,4 +1,6 @@
 #!/bin/bash
 docker stop matt 
 docker rm matt 
+docker stop matt_mysql
+docker rm matt_mysql
 docker network rm matt-net

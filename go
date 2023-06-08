@@ -56,5 +56,6 @@ docker run -d --name matt --network matt-net --env-file $parentdir/environment_v
 
 # ./local_server - comented out as i've expanded it all in the 4 lines above
 
-printf "\n\nYour container build has completed and it should now be running. Now navigate to localhost in your browser.\n\n"
-printf "You could also log into docker using docker exec -it matt /bin/bash, or log into the mysql container with docker exec -it matt_mysql mysql -uroot -p (password is 'admin')\n\n"
+printf "\n\nYour container build has completed and it should now be running. You can navigate to localhost in your browser to view the application.\n\n"
+printf "You can also log into docker on the command line and navigate the server using docker exec -it matt /bin/bash, or log into the mysql container with docker exec -it matt_mysql mysql -uroot -p (password is 'admin')\n\n"
+printf "Note that logs are stored in /etc/httpd/logs in the main container.\n\n"
